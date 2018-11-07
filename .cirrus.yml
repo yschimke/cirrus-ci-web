@@ -3,7 +3,7 @@ container:
 
 build_task:
   clone_script: 
-    - git clone --depth=50 --branch=$CIRRUS_BRANCH https://x-access-token:${CIRRUS_REPO_CLONE_TOKEN}@github.com/${CIRRUS_REPO_FULL_NAME}.git
+    - git clone --depth=50 --branch=$CIRRUS_BRANCH https://x-access-token:${CIRRUS_REPO_CLONE_TOKEN}@github.com/${CIRRUS_REPO_FULL_NAME}.git $CIRRUS_WORKING_DIR
     - git reset --hard $CIRRUS_CHANGE_IN_REPO
   use_compute_credits: $CIRRUS_BRANCH == 'master'
   node_modules_cache:
